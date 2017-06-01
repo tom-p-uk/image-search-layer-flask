@@ -17,6 +17,6 @@ An API that returns Google Image Search results when provided with a search term
 
 ### Heroku Demo:
 
-* Make GET requests to https://tom-p-uk-image-search-flask.herokuapp.com/api/imagesearch/EXAMPLE to receive a JSON response.
-* Paginate through the results by passing in a query string of offset followed by a positive integer. E.g., https://tom-p-uk-image-search-flask.herokuapp.com/api/imagesearch/EXAMPLE?offset=5 .
+* Make GET requests to https://tom-p-uk-image-search-flask.herokuapp.com/api/search/EXAMPLE_SEARCH to receive a JSON response.
+* Paginate through the results by passing in a query string of offset followed by a positive integer. E.g., https://tom-p-uk-image-search-flask.herokuapp.com/api/search/EXAMPLE_SEARCH?offset=5 .
 * Make a GET request to https://tom-p-uk-image-search-flask.herokuapp.com/api/searchhistory to view past searches.
