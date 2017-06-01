@@ -12,7 +12,8 @@ class Search(Resource):
         api_string += 'key=' + os.environ['CSE_API_KEY'] + '&cx=' + os.environ['CSE_ID'] + '&q=' + query
 
         offset = Search.parser.parse_args()['offset']
-        if offset > 0:
+
+        if offset and offset > 0:
             api_string += '&start=' + str(offset)
 
         search = SearchModel(query, api_string)
