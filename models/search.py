@@ -10,7 +10,7 @@ class SearchModel(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     search_term = db.Column(db.String(80))
-    searched_on = db.Column(db.Date)
+    searched_on = db.Column(db.DateTime)
     api_string = db.Column(db.String(200))
 
     def __init__(self, search_term, api_string):
@@ -20,7 +20,7 @@ class SearchModel(db.Model):
 
     def json(self):
         print(self.searched_on)
-        return {'search_term': self.search_term, 'searched_on': str(self.searched_on)}
+        return {'search_term': self.search_term, 'searched_on': self.searched_on.astimezone().strftime("%Y-%m-%d %H:%M %z")}
 
     def save_to_db(self):
         db.session.add(self)
@@ -31,8 +31,8 @@ class SearchModel(db.Model):
         items = list(r.json()['items'])
 
         return list(map(lambda x: {
-                'url': x['link'],
-                'snippet': x['snippet'],
-                'thumnbail': x['image']['thumbnailLink'],
-                'context': x['image']['contextLink']
-            }, items))
+            'url': x['link'],
+            'snippet': x['snippet'],
+            'thumnbail': x['image']['thumbnailLink'],
+            'context': x['image']['contextLink']
+        }, items))

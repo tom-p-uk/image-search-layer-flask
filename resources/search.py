@@ -1,5 +1,6 @@
 from flask_restful import Resource, reqparse
 from models.search import SearchModel
+import os
 
 
 class Search(Resource):
@@ -8,7 +9,7 @@ class Search(Resource):
 
     def get(self, query):
         api_string = 'https://www.googleapis.com/customsearch/v1?searchType=image&num=10&'
-        api_string += 'key=' + 'AIzaSyAX5iooHx6U2mhbsZN1TKer0hZkOBZMdRc' + '&cx=' + '012413247225941039823:5rf47ft6kfi' + '&q=' + query
+        api_string += 'key=' + os.environ['CSE_API_KEY'] + '&cx=' + os.environ['CSE_ID'] + '&q=' + query
 
         offset = Search.parser.parse_args()['offset']
         if offset > 0:
