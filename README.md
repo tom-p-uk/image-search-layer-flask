@@ -1,6 +1,6 @@
 # Image Search Abstraction Layer
 
-A URL shortening microservice built using Python. I originally made this with Node, Express and MongoDB as part of Free Code Camp's backend challenges, but rebuilt it to get some more practice with Python. The original repo can be found [here](https://github.com/tom-p-uk/image-search-abstraction-layer).
+An API that returns Google Image Search results when provided with a search term. I originally made this with Node, Express and MongoDB as part of Free Code Camp's backend challenges, but rebuilt it to get some more practice with Python. The original repo can be found [here](https://github.com/tom-p-uk/image-search-abstraction-layer).
 
 ### User Stories:
 
@@ -17,6 +17,6 @@ A URL shortening microservice built using Python. I originally made this with No
 
 ### Heroku Demo:
 
-Make GET requests to https://tom-p-uk-image-search-flask.herokuapp.com/api/imagesearch/<searchterm> to receive a JSON response.
-Paginate through the results by passing in a query string of offset followed by a positive integer. E.g., https://tom-p-uk-image-search-flask.herokuapp.com/api/imagesearch/<searchterm>?offset=5 .
+Make GET requests to https://tom-p-uk-image-search-flask.herokuapp.com/api/imagesearch/EXAMPLE to receive a JSON response.
+Paginate through the results by passing in a query string of offset followed by a positive integer. E.g., https://tom-p-uk-image-search-flask.herokuapp.com/api/imagesearch/EXAMPLE?offset=5 .
 Make a GET request to https://tom-p-uk-image-search-flask.herokuapp.com/api/searchhistory to view past searches.
